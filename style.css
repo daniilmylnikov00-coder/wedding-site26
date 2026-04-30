@@ -182,3 +182,114 @@ section {
   }
 }
 }
+/* FIX: уменьшить все блоки после обложки */
+
+.timer h2 {
+  font-size: 26px !important;
+  line-height: 1.25 !important;
+  letter-spacing: 3px !important;
+}
+
+.timer {
+  padding: 45px 20px 55px !important;
+}
+
+.timer-grid div {
+  padding: 14px 6px !important;
+}
+
+.timer-grid span {
+  font-size: 24px !important;
+}
+
+.timer-grid p {
+  font-size: 12px !important;
+}
+
+.text {
+  padding: 55px 24px !important;
+}
+
+.text h2 {
+  font-size: 32px !important;
+  line-height: 1.2 !important;
+  margin-bottom: 22px !important;
+}
+
+.text p {
+  font-size: 19px !important;
+  line-height: 1.55 !important;
+  max-width: 320px !important;
+  margin: 0 auto 16px !important;
+}
+
+.place {
+  padding: 55px 24px !important;
+}
+
+.place h2 {
+  font-size: 30px !important;
+  line-height: 1.25 !important;
+  letter-spacing: 4px !important;
+}
+
+.place p {
+  font-size: 19px !important;
+  line-height: 1.5 !important;
+}
+
+.place button {
+  font-size: 18px !important;
+  padding: 14px 34px !important;
+  border-radius: 18px !important;
+}
+
+.schedule {
+  padding: 60px 24px !important;
+}
+
+.schedule h2 {
+  font-size: 31px !important;
+  line-height: 1.35 !important;
+  letter-spacing: 5px !important;
+}
+
+.schedule-row span,
+.item span {
+  font-size: 20px !important;
+}
+
+.schedule-row p,
+.item p {
+  font-size: 23px !important;
+}
+
+.schedule-row small,
+.item small {
+  font-size: 16px !important;
+}
+
+.confirm {
+  padding: 60px 24px 80px !important;
+}
+
+.confirm h2 {
+  font-size: 31px !important;
+  letter-spacing: 5px !important;
+}
+
+.confirm p {
+  font-size: 19px !important;
+  line-height: 1.45 !important;
+}
+
+#rsvp-form input,
+#rsvp-form select {
+  font-size: 17px !important;
+  padding: 15px 18px !important;
+}
+
+#rsvp-form button {
+  font-size: 20px !important;
+  padding: 16px !important;
+}
