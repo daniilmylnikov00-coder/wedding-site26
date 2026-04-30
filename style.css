@@ -306,37 +306,38 @@ section {
 
 .place {
   position: relative;
-  padding-top: 140px;
-  padding-bottom: 140px;
+  overflow: hidden;
+  padding-top: 150px !important;
+  padding-bottom: 150px !important;
 }
 
-/* верхняя часть */
 .place::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 140px;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92%;
+  height: 120px;
   background: url("assets/place-frame.png") center top / contain no-repeat;
-  z-index: 0;
+  z-index: 1;
+  pointer-events: none;
 }
 
-/* нижняя часть (перевёрнутая) */
 .place::after {
   content: "";
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 140px;
-  background: url("assets/place-frame.png") center bottom / contain no-repeat;
-  transform: scaleY(-1);
-  z-index: 0;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%) scaleY(-1);
+  width: 92%;
+  height: 120px;
+  background: url("assets/place-frame.png") center top / contain no-repeat;
+  z-index: 1;
+  pointer-events: none;
 }
 
-/* контент поверх */
 .place > * {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
