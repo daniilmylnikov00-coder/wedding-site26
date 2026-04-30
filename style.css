@@ -172,3 +172,39 @@ body,
   color: white;
 }
 
+.countdown {
+  text-align: center;
+  padding: 60px 20px;
+  color: #333;
+}
+
+.countdown h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #6f7f5d;
+  letter-spacing: 2px;
+}
+
+#timer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+#timer div {
+  background: rgba(255,255,255,0.7);
+  padding: 15px 20px;
+  border-radius: 12px;
+  min-width: 70px;
+}
+
+#timer span {
+  font-size: 26px;
+  font-weight: bold;
+  display: block;
+}
+
+#timer p {
+  font-size: 12px;
+  margin: 0;
+}
