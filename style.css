@@ -1,34 +1,28 @@
-/* ШРИФТЫ */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Cormorant+Garamond:wght@300;400&display=swap');
+/* ШРИФТЫ (красивые свадебные) */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Cormorant+Garamond:wght@300;400;500&display=swap');
 
+/* ОБЩЕЕ */
 body {
   margin: 0;
   font-family: 'Cormorant Garamond', serif;
-  background: #f5f3ef;
   color: #2b2b2b;
+
+  /* PAPER фон */
+  background: url('assets/paper.jpg') repeat;
+  background-size: 400px;
 }
 
-/* ОБЩИЕ СЕКЦИИ */
 section {
   padding: 70px 20px;
   text-align: center;
 }
 
-/* ===== ПЕРВЫЙ ЭКРАН ===== */
-.hero {
-  padding: 100px 20px;
-}
-
-.hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 40px;
-  margin: 20px 0;
-}
-
-.hero p {
-  font-size: 18px;
-  letter-spacing: 2px;
-  color: #555;
+/* ===== ОБЛОЖКА ===== */
+.cover img {
+  width: 100%;
+  max-width: 420px;
+  display: block;
+  margin: 0 auto;
 }
 
 /* ===== ТАЙМЕР ===== */
@@ -38,9 +32,10 @@ section {
 }
 
 .timer h2 {
-  font-size: 32px;
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
   color: #7a8d67;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .timer-grid {
@@ -49,22 +44,23 @@ section {
   gap: 12px;
 }
 
-.timer-box {
+.timer-grid div {
   background: white;
-  padding: 18px;
+  padding: 16px;
   border-radius: 14px;
   width: 70px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-.timer-box span {
+.timer-grid span {
   display: block;
   font-size: 22px;
 }
 
-.timer-box small {
+.timer-grid p {
   font-size: 12px;
   color: #777;
+  margin: 0;
 }
 
 /* ===== ГОСТИ ===== */
@@ -72,85 +68,97 @@ section {
   font-family: 'Playfair Display', serif;
   font-size: 30px;
   font-style: italic;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .text p {
   font-size: 18px;
   line-height: 1.6;
-  color: #444;
   max-width: 320px;
-  margin: 0 auto 15px;
+  margin: 0 auto 14px;
+  color: #444;
 }
 
 /* ===== МЕСТО ===== */
 .place h2 {
   font-family: 'Playfair Display', serif;
   font-size: 30px;
-  margin-bottom: 20px;
   color: #7a8d67;
+  margin-bottom: 18px;
 }
 
 .place p {
   font-size: 18px;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
-.btn-map {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 26px;
+.place button {
+  margin-top: 18px;
+  padding: 12px 28px;
   border-radius: 25px;
+  border: none;
   background: #7a8d67;
   color: white;
-  text-decoration: none;
+  font-size: 17px;
 }
 
 /* ===== РАСПИСАНИЕ ===== */
 .schedule h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 32px;
-  margin-bottom: 40px;
+  font-size: 30px;
+  margin-bottom: 35px;
 }
 
 .schedule-item {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
   margin-bottom: 18px;
-  font-size: 18px;
 }
 
 .schedule-item span {
-  width: 60px;
-  font-weight: bold;
+  display: block;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.schedule-item div {
+  font-size: 22px;
+}
+
+.schedule-item small {
+  font-size: 14px;
+  color: #666;
 }
 
 /* ===== ПОДТВЕРЖДЕНИЕ ===== */
-.rsvp h2 {
+.confirm h2 {
   font-family: 'Playfair Display', serif;
   font-size: 30px;
   color: #7a8d67;
 }
 
-.rsvp p {
+.confirm p {
   font-size: 18px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
-.rsvp input,
-.rsvp select {
+#rsvp-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#rsvp-form input,
+#rsvp-form select {
   width: 100%;
   max-width: 320px;
   padding: 14px;
   margin-bottom: 12px;
   border-radius: 12px;
   border: none;
-  background: #f0f0f0;
+  background: rgba(255,255,255,0.85);
   font-size: 16px;
 }
 
-.rsvp button {
+#rsvp-form button {
   margin-top: 10px;
   padding: 14px;
   width: 100%;
@@ -164,21 +172,16 @@ section {
 
 /* ===== АДАПТИВ ===== */
 @media (max-width: 480px) {
-  .hero h1 {
-    font-size: 32px;
-  }
-
-  .timer-grid {
-    gap: 8px;
-  }
-
-  .timer-box {
+  .timer-grid div {
     width: 60px;
-    padding: 14px;
+    padding: 12px;
   }
 
   .text p {
     font-size: 17px;
   }
-}
+
+  .schedule-item div {
+    font-size: 20px;
+  }
 }
