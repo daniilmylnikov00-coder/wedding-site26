@@ -80,3 +80,29 @@
         <button type="submit">Отправить</button>
     </form>
 </section>
+<script>
+document.getElementById('rsvp-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    let name = document.getElementById('name').value;
+    let alcohol = document.getElementById('alcohol').value;
+    let drink = document.getElementById('drink').value;
+    let attendance = document.getElementById('attendance').value;
+
+    let message = Новая заявка:\n\n👤 ${name}\n🍷 Алкоголь: ${alcohol}\n🥂 Напиток: ${drink}\n✅ Будет: ${attendance};
+
+    let token = 'ТВОЙ_ТОКЕН_БОТА';
+    let chat_id = 'ТВОЙ_CHAT_ID';
+
+    fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            chat_id: chat_id,
+            text: message
+        })
+    });
+
+    alert('Отправлено!');
+});
+</script>
