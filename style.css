@@ -15,3 +15,39 @@ body{margin:0;background:#e7e2d8;color:#1f1f1f;font-family:'Cormorant Garamond',
 .timeline span{font-size:24px;color:#6f855f}
 .timeline p{font-size:22px;margin:0}
 @media(max-width:460px){.page{max-width:100%}.section{padding-left:24px;padding-right:24px}}
+.schedule {
+  padding: 80px 28px;
+  text-align: center;
+  background: #f7f5ef;
+}
+
+.schedule h2 {
+  font-size: 34px;
+  letter-spacing: 6px;
+  font-weight: 400;
+  margin-bottom: 50px;
+}
+
+.schedule-row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 24px;
+  align-items: center;
+  text-align: left;
+  border-bottom: 1px solid rgba(0,0,0,.18);
+  padding: 20px 0;
+}
+
+.schedule-row span {
+  font-size: 24px;
+}
+
+.schedule-row p {
+  margin: 0;
+  font-size: 26px;
+}
+
+.schedule-row small {
+  font-size: 18px;
+  opacity: .7;
+}
