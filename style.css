@@ -1,187 +1,248 @@
-/* ШРИФТЫ (красивые свадебные) */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Cormorant+Garamond:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap');
 
-/* ОБЩЕЕ */
-body {
+* {
+  box-sizing: border-box;
+}
+
+html, body {
   margin: 0;
-  font-family: 'Cormorant Garamond', serif;
-  color: #2b2b2b;
+  padding: 0;
+  background: #e8e4dc;
+  color: #222;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
 
-  /* PAPER фон */
-  background: url('assets/paper.jpg') repeat;
-  background-size: 400px;
+.page {
+  width: 100%;
+  max-width: 430px;
+  margin: 0 auto;
+  background: #f8f6f0;
+  overflow: hidden;
 }
 
 section {
-  padding: 70px 20px;
-  text-align: center;
-}
-
-/* ===== ОБЛОЖКА ===== */
-.cover img {
   width: 100%;
-  max-width: 420px;
-  display: block;
+  max-width: 430px;
   margin: 0 auto;
 }
 
-/* ===== ТАЙМЕР ===== */
-.timer {
-  background: #efede8;
-  padding: 60px 20px;
+/* ОБЛОЖКА */
+.cover {
+  padding: 0;
+  background: #f8f6f0;
 }
 
+.cover img {
+  width: 100%;
+  display: block;
+}
+
+/* ОБЩИЙ ФОН */
+.timer,
+.text,
+.place,
+.schedule,
+.confirm {
+  background: #f8f6f0 url("assets/paper.jpg") center/cover no-repeat;
+  text-align: center;
+  padding: 65px 28px;
+}
+
+/* ТАЙМЕР */
 .timer h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 28px;
-  color: #7a8d67;
-  margin-bottom: 25px;
+  margin: 0 0 28px;
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 500;
+  color: #6f7f5d;
+  letter-spacing: 2px;
 }
 
 .timer-grid {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 12px;
 }
 
 .timer-grid div {
-  background: white;
-  padding: 16px;
-  border-radius: 14px;
-  width: 70px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  background: rgba(255,255,255,0.82);
+  border-radius: 16px;
+  padding: 17px 6px;
+  box-shadow: 0 8px 22px rgba(0,0,0,.06);
 }
 
 .timer-grid span {
   display: block;
-  font-size: 22px;
+  font-size: 28px;
+  line-height: 1;
 }
 
 .timer-grid p {
-  font-size: 12px;
-  color: #777;
-  margin: 0;
+  margin: 8px 0 0;
+  font-size: 13px;
 }
 
-/* ===== ГОСТИ ===== */
+/* ГОСТИ */
 .text h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 30px;
+  margin: 0 0 24px;
+  font-size: 34px;
   font-style: italic;
-  margin-bottom: 18px;
+  font-weight: 500;
+  line-height: 1.2;
 }
 
 .text p {
-  font-size: 18px;
-  line-height: 1.6;
-  max-width: 320px;
-  margin: 0 auto 14px;
-  color: #444;
+  max-width: 340px;
+  margin: 0 auto 16px;
+  font-size: 21px;
+  line-height: 1.55;
 }
 
-/* ===== МЕСТО ===== */
-.place h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 30px;
-  color: #7a8d67;
-  margin-bottom: 18px;
+/* МЕСТО */
+.place h2,
+.schedule h2,
+.confirm h2 {
+  margin: 0 0 30px;
+  font-size: 32px;
+  line-height: 1.25;
+  font-weight: 500;
+  color: #6f7f5d;
+  letter-spacing: 4px;
+  text-transform: uppercase;
 }
 
 .place p {
-  font-size: 18px;
+  max-width: 340px;
+  margin: 0 auto 24px;
+  font-size: 21px;
   line-height: 1.5;
 }
 
-.place button {
-  margin-top: 18px;
-  padding: 12px 28px;
-  border-radius: 25px;
+.place button,
+.btn-map {
+  display: inline-block;
   border: none;
-  background: #7a8d67;
+  background: #6f7f5d;
   color: white;
-  font-size: 17px;
+  padding: 15px 38px;
+  border-radius: 22px;
+  font-size: 21px;
+  font-family: inherit;
+  text-decoration: none;
+  box-shadow: 0 10px 24px rgba(111,127,93,.24);
 }
 
-/* ===== РАСПИСАНИЕ ===== */
+/* РАСПИСАНИЕ */
 .schedule h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 30px;
-  margin-bottom: 35px;
+  color: #222;
+  margin-bottom: 44px;
 }
 
-.schedule-item {
-  margin-bottom: 18px;
+.schedule-row,
+.schedule-item,
+.item {
+  display: grid;
+  grid-template-columns: 82px 1fr;
+  gap: 20px;
+  align-items: center;
+  text-align: left;
+  border-bottom: 1px solid rgba(0,0,0,.16);
+  padding: 20px 0;
 }
 
-.schedule-item span {
-  display: block;
-  font-size: 18px;
-  margin-bottom: 5px;
-}
-
-.schedule-item div {
+.schedule-row span,
+.schedule-item span,
+.item span {
   font-size: 22px;
 }
 
-.schedule-item small {
-  font-size: 14px;
-  color: #666;
+.schedule-row p,
+.schedule-item div,
+.item p {
+  margin: 0;
+  font-size: 25px;
+  line-height: 1.25;
 }
 
-/* ===== ПОДТВЕРЖДЕНИЕ ===== */
+.schedule-row small,
+.schedule-item small,
+.item small {
+  font-size: 17px;
+  opacity: .65;
+}
+
+/* ПОДТВЕРЖДЕНИЕ */
 .confirm h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 30px;
-  color: #7a8d67;
+  color: #6f7f5d;
 }
 
 .confirm p {
-  font-size: 18px;
-  margin-bottom: 18px;
+  max-width: 340px;
+  margin: 0 auto 24px;
+  font-size: 20px;
+  line-height: 1.45;
 }
 
 #rsvp-form {
+  max-width: 330px;
+  margin: 34px auto 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 14px;
 }
 
 #rsvp-form input,
 #rsvp-form select {
   width: 100%;
-  max-width: 320px;
-  padding: 14px;
-  margin-bottom: 12px;
-  border-radius: 12px;
+  padding: 16px 18px;
   border: none;
-  background: rgba(255,255,255,0.85);
-  font-size: 16px;
+  border-radius: 12px;
+  background: rgba(255,255,255,.94);
+  font-size: 18px;
+  color: #222;
+  font-family: Arial, sans-serif;
 }
 
 #rsvp-form button {
   margin-top: 10px;
-  padding: 14px;
-  width: 100%;
-  max-width: 320px;
-  border-radius: 25px;
+  padding: 17px;
   border: none;
-  background: #7a8d67;
+  border-radius: 34px;
+  background: #6f7f5d;
   color: white;
-  font-size: 18px;
+  font-size: 22px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 10px 24px rgba(111,127,93,.25);
 }
 
-/* ===== АДАПТИВ ===== */
-@media (max-width: 480px) {
-  .timer-grid div {
-    width: 60px;
-    padding: 12px;
+/* МОБИЛКА */
+@media (max-width: 430px) {
+  .timer,
+  .text,
+  .place,
+  .schedule,
+  .confirm {
+    padding-left: 24px;
+    padding-right: 24px;
   }
 
-  .text p {
-    font-size: 17px;
+  .timer-grid {
+    gap: 10px;
   }
 
-  .schedule-item div {
+  .timer-grid span {
+    font-size: 25px;
+  }
+
+  .text p,
+  .place p {
     font-size: 20px;
+  }
+
+  .schedule-row,
+  .schedule-item,
+  .item {
+    grid-template-columns: 78px 1fr;
+    gap: 18px;
   }
 }
