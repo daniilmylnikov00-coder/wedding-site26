@@ -238,3 +238,100 @@ section {
     padding-right: 24px;
   }
 }
+/* ВОЗВРАЩАЕМ КРАСИВЫЙ СТИЛЬ */
+
+.text,
+.place,
+.schedule,
+.confirm,
+.timer {
+  max-width: 430px;
+  margin: 0 auto;
+  text-align: center;
+  background-image: url("assets/paper.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 80px 28px;
+}
+
+.text h2 {
+  font-size: 44px;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 1px;
+  color: #222;
+  text-transform: none;
+}
+
+.text p,
+.place p,
+.confirm p {
+  font-size: 26px;
+  line-height: 1.6;
+}
+
+.place h2,
+.schedule h2,
+.confirm h2,
+.timer h2 {
+  font-size: 38px;
+  font-weight: 400;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  color: #6f7f5d;
+}
+
+.place button,
+#rsvp-form button {
+  background: #6f7f5d;
+  color: white;
+  border: none;
+  border-radius: 28px;
+  padding: 18px 48px;
+  font-size: 24px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.schedule .item {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 24px;
+  text-align: left;
+  align-items: center;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(0,0,0,.18);
+}
+
+.schedule .item span {
+  font-size: 26px;
+}
+
+.schedule .item p {
+  margin: 0;
+  font-size: 34px;
+}
+
+.schedule .item small {
+  font-size: 22px;
+  opacity: .65;
+}
+
+.timer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.timer-grid div {
+  background: rgba(255,255,255,.72);
+  border-radius: 16px;
+  padding: 18px 6px;
+}
+
+.timer-grid span {
+  font-size: 28px;
+}
+
+.timer-grid p {
+  font-size: 13px;
+}
