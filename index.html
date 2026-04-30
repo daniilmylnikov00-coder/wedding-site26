@@ -80,6 +80,17 @@
         <button type="submit">Отправить</button>
     </form>
 </section>
+ 
+<div class="countdown">
+  <h2>До свадьбы осталось</h2>
+  <div id="timer">
+    <div><span id="days">0</span><p>дней</p></div>
+    <div><span id="hours">0</span><p>часов</p></div>
+    <div><span id="minutes">0</span><p>минут</p></div>
+    <div><span id="seconds">0</span><p>секунд</p></div>
+  </div>
+</div>
+
 <script>
 document.getElementById('rsvp-form').addEventListener('submit', async function(e) {
   e.preventDefault();
