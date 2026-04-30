@@ -1,161 +1,140 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Вероника + Даниил — приглашение</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вероника и Даниил</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <main class="page">
-    <section class="cover" aria-label="Приглашение на свадьбу">
-  <img src="assets/cover.jpg" alt="Вероника и Даниил">
 
+<!-- ОБЛОЖКА -->
+<section class="cover">
+  <img src="assets/cover.jpg" alt="cover">
+
+  <!-- ТАЙМЕР -->
   <div class="cover-countdown">
-    <div><span id="days">0</span><p>недель</p></div>
-    <div><span id="hours">0</span><p>дней</p></div>
-    <div><span id="minutes">0</span><p>часов</p></div>
-    <div><span id="seconds">0</span><p>секунд</p></div>
-  </div>
-</section>
-
-    <section class="section">
-      <p class="script">Гости!</p>
-      <p>Мы рады сообщить Вам, что <b>12.06.2026</b> состоится самое главное торжество в нашей жизни — день нашей свадьбы.</p>
-      <p>Приглашаем Вас разделить с нами радость этого незабываемого дня.</p>
-    </section>
-
-    <section class="section green">
-      <h2>Место проведения</h2>
-      <p>Краснодар, микрорайон Завод Измерительных Приборов,<br>Зиповская улица, 5/7</p>
-      <a class="btn" href="https://maps.google.com/?q=45.0593,38.9797" target="_blank" rel="noopener">Открыть карту</a>
-    </section>
-
-    <section class="schedule">
-  <h2>СВАДЕБНОЕ<br>РАСПИСАНИЕ</h2>
-
-  <div class="schedule-row">
-    <span>16:00</span>
-    <p>Сбор гостей<br><small>фуршет</small></p>
-  </div>
-
-  <div class="schedule-row">
-    <span>17:00</span>
-    <p>Церемония</p>
-  </div>
-
-  <div class="schedule-row">
-    <span>17:30</span>
-    <p>Фотосессия</p>
-  </div>
-
-  <div class="schedule-row">
-    <span>18:00</span>
-    <p>Банкет</p>
-  </div>
-
-  <div class="schedule-row">
-    <span>23:00</span>
-    <p>Последний бокал</p>
-  </div>
-</section>
-
-    <section class="confirm">
-    <h2>ПОДТВЕРЖДЕНИЕ</h2>
-    <p>Пожалуйста, подтвердите своё присутствие до <b>11.05.2026</b>.</p>
-
-    <form id="rsvp-form">
-        <input type="text" id="name" placeholder="Фамилия Имя" required>
-
-        <select id="alcohol">
-            <option value="">Пьете ли алкоголь?</option>
-            <option>Да</option>
-            <option>Нет</option>
-        </select>
-
-        <input type="text" id="drink" placeholder="Что пьёте">
-
-        <select id="attendance">
-            <option value="">Будете на торжестве?</option>
-            <option>Да</option>
-            <option>Нет</option>
-        </select>
-
-        <button type="submit">Отправить</button>
-    </form>
-</section>
- 
-<div class="countdown">
-  <h2>До свадьбы осталось</h2>
-  <div id="timer">
+    <div><span id="weeks">0</span><p>недель</p></div>
     <div><span id="days">0</span><p>дней</p></div>
     <div><span id="hours">0</span><p>часов</p></div>
-    <div><span id="minutes">0</span><p>минут</p></div>
     <div><span id="seconds">0</span><p>секунд</p></div>
   </div>
-</div>
+</section>
 
+<!-- ТЕКСТ -->
+<section class="text">
+  <h2>Гости!</h2>
+  <p>
+    Мы рады сообщить Вам, что <b>12.06.2026</b> состоится самое главное
+    торжество в нашей жизни — день нашей свадьбы.
+  </p>
+</section>
+
+<!-- МЕСТО -->
+<section class="place">
+  <h2>Место проведения</h2>
+  <p>Краснодар, ул. Зиповская 5/7</p>
+  <button onclick="window.open('https://maps.google.com')">
+    Открыть карту
+  </button>
+</section>
+
+<!-- РАСПИСАНИЕ -->
+<section class="schedule">
+  <h2>Свадебное расписание</h2>
+
+  <div class="item"><span>16:00</span>Сбор гостей (фуршет)</div>
+  <div class="item"><span>17:00</span>Церемония</div>
+  <div class="item"><span>17:30</span>Фотосессия</div>
+  <div class="item"><span>18:00</span>Банкет</div>
+  <div class="item"><span>23:00</span>Последний бокал</div>
+</section>
+
+<!-- ПОДТВЕРЖДЕНИЕ -->
+<section class="confirm">
+  <h2>Подтверждение</h2>
+  <p>Пожалуйста, подтвердите своё присутствие до <b>11.05.2026</b></p>
+
+  <form id="rsvp-form">
+
+    <input type="text" id="name" placeholder="Фамилия Имя" required>
+
+    <select id="alcohol">
+      <option value="">Пьете ли алкоголь?</option>
+      <option>Да</option>
+      <option>Нет</option>
+    </select>
+
+    <input type="text" id="drink" placeholder="Что пьёте">
+
+    <select id="attendance">
+      <option value="">Будете на торжестве?</option>
+      <option>Да</option>
+      <option>Нет</option>
+    </select>
+
+    <button type="submit">Отправить</button>
+
+  </form>
+</section>
+
+<!-- СКРИПТ -->
 <script>
-document.getElementById('rsvp-form').addEventListener('submit', async function(e) {
+
+document.getElementById('rsvp-form').addEventListener('submit', function(e) {
   e.preventDefault();
 
-  const name = document.getElementById('name').value;
-  const alcohol = document.getElementById('alcohol').value;
-  const drink = document.getElementById('drink').value;
-  const attendance = document.getElementById('attendance').value;
+  let name = document.getElementById('name').value;
+  let alcohol = document.getElementById('alcohol').value;
+  let drink = document.getElementById('drink').value;
+  let attendance = document.getElementById('attendance').value;
 
-  const token = '8788232279:AAG7yswVkXBaN0A4lLedYCiETXbFBiuOkDM';
-  const chat_id = '6192707719';
+  let message =
+    "📩 Новая заявка:\n\n" +
+    "👤 " + name + "\n" +
+    "🍷 Алкоголь: " + alcohol + "\n" +
+    "🥂 Напиток: " + drink + "\n" +
+    "🎉 Присутствие: " + attendance;
 
-  const message =
-`💍 Новая анкета на свадьбу
+  let token = "8788232279:AAG7yswVkXBaN0A4lLedYCiETXbFBiuOkDM";
+  let chat_id = "6192707719";
 
-👤 Фамилия Имя: ${name}
-🥂 Пьёт алкоголь: ${alcohol}
-🍷 Что пьёт: ${drink}
-✅ Будет на торжестве: ${attendance}`;
+  fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      chat_id: chat_id,
+      text: message
+    })
+  });
 
-  try {
-    const response = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        chat_id: chat_id,
-        text: message
-      })
-    });
-
-    if (response.ok) {
-      alert('Спасибо! Ответ отправлен 🤍');
-      document.getElementById('rsvp-form').reset();
-    } else {
-      alert('Ошибка Telegram. Проверь token/chat_id.');
-    }
-  } catch (error) {
-    alert('Ошибка отправки. Открой сайт не из предпросмотра, а по опубликованной ссылке.');
-  }
+  alert("Отправлено!");
 });
-</script>
-<script>
-const weddingDate = new Date("2026-06-12T15:00:00").getTime();
+
+
+/* ТАЙМЕР */
+const weddingDate = new Date("2026-06-12T16:00:00").getTime();
 
 setInterval(() => {
   const now = new Date().getTime();
   const diff = weddingDate - now;
 
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const weeks = Math.floor(diff / (1000 * 60 * 60 * 24 * 7));
+  const days = Math.floor((diff / (1000 * 60 * 60 * 24)) % 7);
   const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((diff / (1000 * 60)) % 60);
   const seconds = Math.floor((diff / 1000) % 60);
 
+  document.getElementById("weeks").innerText = weeks;
   document.getElementById("days").innerText = days;
   document.getElementById("hours").innerText = hours;
-  document.getElementById("minutes").innerText = minutes;
   document.getElementById("seconds").innerText = seconds;
+
 }, 1000);
+
 </script>
+
+</body>
+</html>
