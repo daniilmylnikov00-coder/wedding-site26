@@ -57,40 +57,26 @@
 </section>
 
     <section class="confirm">
+    <h2>ПОДТВЕРЖДЕНИЕ</h2>
+    <p>Пожалуйста, подтвердите своё присутствие до <b>11.05.2026</b>.</p>
 
-  <h2>ПОДТВЕРЖДЕНИЕ</h2>
+    <form id="rsvp-form">
+        <input type="text" id="name" placeholder="Фамилия Имя" required>
 
-  <p>
-    Пожалуйста, подтвердите своё присутствие<br>
-    до <b>11.05.2026</b>
-  </p>
+        <select id="alcohol">
+            <option value="">Пьете ли алкоголь?</option>
+            <option>Да</option>
+            <option>Нет</option>
+        </select>
 
-  <form class="rsvp">
+        <input type="text" id="drink" placeholder="Что пьёте">
 
-    <input type="text" placeholder="Фамилия Имя" required>
+        <select id="attendance">
+            <option value="">Будете на торжестве?</option>
+            <option>Да</option>
+            <option>Нет</option>
+        </select>
 
-    <select required>
-      <option value="">Будете ли пить алкоголь?</option>
-      <option>Да</option>
-      <option>Нет</option>
-    </select>
-
-    <select>
-      <option value="">Что будете пить?</option>
-      <option>Вино</option>
-      <option>Шампанское</option>
-      <option>Крепкий алкоголь</option>
-      <option>Не пью</option>
-    </select>
-
-    <select required>
-      <option value="">Будете на торжестве?</option>
-      <option>Да, обязательно</option>
-      <option>К сожалению, нет</option>
-    </select>
-
-    <button type="submit">Ждём вас!</button>
-
-  </form>
-
+        <button type="submit">Отправить</button>
+    </form>
 </section>
