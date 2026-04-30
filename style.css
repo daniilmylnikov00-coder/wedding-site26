@@ -9,15 +9,15 @@ body {
   font-family: Georgia, "Times New Roman", serif;
 }
 
-section {
+.page {
   max-width: 430px;
   margin: 0 auto;
+  background: #f8f6f0;
+  overflow: hidden;
 }
 
-/* ОБЛОЖКА */
-
-.cover {
-  background: #f8f6f0;
+section {
+  width: 100%;
 }
 
 .cover img {
@@ -25,50 +25,40 @@ section {
   display: block;
 }
 
-/* ОБЩИЙ БУМАЖНЫЙ ФОН */
-
 .timer,
 .text,
 .place,
 .schedule,
 .confirm {
-  background-image: url("assets/paper.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* ТАЙМЕР */
-
-.timer {
+  background: #f8f6f0 url("assets/paper.jpg") center/cover no-repeat;
+  padding: 75px 28px;
   text-align: center;
-  padding: 55px 22px 65px;
 }
 
 .timer h2 {
-  margin: 0 0 34px;
-  font-weight: 400;
   font-size: 34px;
   color: #6f7f5d;
+  font-weight: 400;
   letter-spacing: 3px;
+  margin: 0 0 32px;
 }
 
 .timer-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
+  gap: 12px;
 }
 
 .timer-grid div {
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(255,255,255,.75);
   border-radius: 16px;
-  padding: 20px 8px;
-  box-shadow: 0 8px 22px rgba(0,0,0,0.05);
+  padding: 18px 6px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.06);
 }
 
 .timer-grid span {
   display: block;
-  font-size: 30px;
+  font-size: 28px;
   line-height: 1;
 }
 
@@ -77,33 +67,11 @@ section {
   font-size: 13px;
 }
 
-/* ТЕКСТОВЫЕ БЛОКИ */
-
-.text,
-.place,
-.schedule,
-.confirm {
-  padding: 80px 28px;
-  text-align: center;
-}
-
-.text h2,
-.place h2,
-.schedule h2,
-.confirm h2 {
-  margin: 0 0 32px;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 6px;
-  font-size: 34px;
-  color: #6f7f5d;
-}
-
 .text h2 {
-  text-transform: none;
-  letter-spacing: 1px;
-  color: #222;
+  font-size: 44px;
+  font-weight: 400;
   font-style: italic;
+  margin: 0 0 32px;
 }
 
 .text p,
@@ -111,57 +79,59 @@ section {
 .confirm p {
   font-size: 24px;
   line-height: 1.55;
-  margin: 0 auto 26px;
+  margin: 0 auto 24px;
 }
 
-/* МЕСТО */
+.place h2,
+.schedule h2,
+.confirm h2 {
+  margin: 0 0 38px;
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: 7px;
+  text-transform: uppercase;
+  color: #6f7f5d;
+}
 
 .place button {
-  margin-top: 22px;
+  margin-top: 24px;
   border: none;
   background: #6f7f5d;
   color: white;
   padding: 18px 48px;
   border-radius: 20px;
   font-size: 24px;
-  font-family: inherit;
+  font-family: Georgia, "Times New Roman", serif;
+  box-shadow: 0 12px 28px rgba(111,127,93,.22);
 }
-
-/* РАСПИСАНИЕ */
 
 .schedule h2 {
   color: #222;
-  margin-bottom: 60px;
+  margin-bottom: 58px;
 }
 
-.item {
+.schedule-row {
   display: grid;
   grid-template-columns: 90px 1fr;
   gap: 24px;
-  align-items: center;
   text-align: left;
-  border-bottom: 1px solid rgba(0,0,0,0.18);
+  align-items: center;
   padding: 24px 0;
+  border-bottom: 1px solid rgba(0,0,0,.18);
 }
 
-.item span {
+.schedule-row span {
   font-size: 25px;
 }
 
-.item p {
+.schedule-row p {
   margin: 0;
   font-size: 30px;
 }
 
-.item small {
+.schedule-row small {
   font-size: 20px;
-  opacity: 0.65;
-}
-
-/* ФОРМА */
-
-.confirm {
-  padding-bottom: 95px;
+  opacity: .65;
 }
 
 .confirm h2 {
@@ -173,22 +143,22 @@ section {
 }
 
 #rsvp-form {
+  max-width: 330px;
+  margin: 38px auto 0;
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin: 38px auto 0;
-  max-width: 330px;
 }
 
 #rsvp-form input,
 #rsvp-form select {
   width: 100%;
   padding: 18px 20px;
-  border-radius: 12px;
   border: none;
+  border-radius: 12px;
+  background: rgba(255,255,255,.92);
   font-size: 20px;
   font-family: Arial, sans-serif;
-  background: rgba(255,255,255,0.9);
   color: #222;
 }
 
@@ -201,35 +171,11 @@ section {
   color: white;
   font-size: 24px;
   font-family: Arial, sans-serif;
+  box-shadow: 0 12px 28px rgba(111,127,93,.25);
 }
 
-/* МОБИЛКА */
-
 @media (max-width: 430px) {
-  section {
-    max-width: 100%;
-  }
-
-  .timer {
-    padding: 45px 18px 55px;
-  }
-
-  .timer h2 {
-    font-size: 30px;
-  }
-
-  .timer-grid {
-    gap: 10px;
-  }
-
-  .timer-grid div {
-    padding: 18px 6px;
-  }
-
-  .timer-grid span {
-    font-size: 26px;
-  }
-
+  .timer,
   .text,
   .place,
   .schedule,
@@ -237,101 +183,21 @@ section {
     padding-left: 24px;
     padding-right: 24px;
   }
-}
-/* ВОЗВРАЩАЕМ КРАСИВЫЙ СТИЛЬ */
 
-.text,
-.place,
-.schedule,
-.confirm,
-.timer {
-  max-width: 430px;
-  margin: 0 auto;
-  text-align: center;
-  background-image: url("assets/paper.jpg");
-  background-size: cover;
-  background-position: center;
-  padding: 80px 28px;
-}
+  .timer-grid {
+    gap: 10px;
+  }
 
-.text h2 {
-  font-size: 44px;
-  font-weight: 400;
-  font-style: italic;
-  letter-spacing: 1px;
-  color: #222;
-  text-transform: none;
-}
+  .timer-grid span {
+    font-size: 26px;
+  }
 
-.text p,
-.place p,
-.confirm p {
-  font-size: 26px;
-  line-height: 1.6;
-}
+  .schedule-row {
+    grid-template-columns: 82px 1fr;
+    gap: 18px;
+  }
 
-.place h2,
-.schedule h2,
-.confirm h2,
-.timer h2 {
-  font-size: 38px;
-  font-weight: 400;
-  letter-spacing: 8px;
-  text-transform: uppercase;
-  color: #6f7f5d;
-}
-
-.place button,
-#rsvp-form button {
-  background: #6f7f5d;
-  color: white;
-  border: none;
-  border-radius: 28px;
-  padding: 18px 48px;
-  font-size: 24px;
-  font-family: Georgia, "Times New Roman", serif;
-}
-
-.schedule .item {
-  display: grid;
-  grid-template-columns: 90px 1fr;
-  gap: 24px;
-  text-align: left;
-  align-items: center;
-  padding: 24px 0;
-  border-bottom: 1px solid rgba(0,0,0,.18);
-}
-
-.schedule .item span {
-  font-size: 26px;
-}
-
-.schedule .item p {
-  margin: 0;
-  font-size: 34px;
-}
-
-.schedule .item small {
-  font-size: 22px;
-  opacity: .65;
-}
-
-.timer-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
-}
-
-.timer-grid div {
-  background: rgba(255,255,255,.72);
-  border-radius: 16px;
-  padding: 18px 6px;
-}
-
-.timer-grid span {
-  font-size: 28px;
-}
-
-.timer-grid p {
-  font-size: 13px;
+  .schedule-row p {
+    font-size: 28px;
+  }
 }
