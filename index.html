@@ -81,31 +81,45 @@
     </form>
 </section>
 <script>
-document.getElementById('rsvp-form').addEventListener('submit', function(e) {
-    e.preventDefault();
+document.getElementById('rsvp-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
 
-    let name = document.getElementById('name').value;
-    let alcohol = document.getElementById('alcohol').value;
-    let drink = document.getElementById('drink').value;
-    let attendance = document.getElementById('attendance').value;
+  const name = document.getElementById('name').value;
+  const alcohol = document.getElementById('alcohol').value;
+  const drink = document.getElementById('drink').value;
+  const attendance = document.getElementById('attendance').value;
 
-    let message = Новая заявка:\n\n👤 ${name}\n🍷 Алкоголь: ${alcohol}\n🥂 Напиток: ${drink}\n✅ Будет: ${attendance};
+  const token = '8788232279:AAG7yswVkXBaN0A4lLedYCiETXbFBiuOkDM';
+  const chat_id = '6192707719';
 
-    let token = '8788232279:AAG7yswVkXBaN0A4lLedYCiETXbFBiuOkDM';
-    let chat_id = '6192707719';
+  const message =
+`💍 Новая анкета на свадьбу
 
-    fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            chat_id: chat_id,
-            text: message
-        })
+👤 Фамилия Имя: ${name}
+🥂 Пьёт алкоголь: ${alcohol}
+🍷 Что пьёт: ${drink}
+✅ Будет на торжестве: ${attendance}`;
+
+  try {
+    const response = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        chat_id: chat_id,
+        text: message
+      })
     });
 
-    alert('Отправлено!');
+    if (response.ok) {
+      alert('Спасибо! Ответ отправлен 🤍');
+      document.getElementById('rsvp-form').reset();
+    } else {
+      alert('Ошибка Telegram. Проверь token/chat_id.');
+    }
+  } catch (error) {
+    alert('Ошибка отправки. Открой сайт не из предпросмотра, а по опубликованной ссылке.');
+  }
 });
 </script>
-
-</body>
-</html>
