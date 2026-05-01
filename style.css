@@ -275,15 +275,6 @@ section {
   z-index: 1;
 }
 
-/* чуть красивее расписание */
-.schedule-row {
-  background: rgba(255,255,255,0.22);
-  border-radius: 16px;
-  padding-left: 16px !important;
-  padding-right: 16px !important;
-  margin-bottom: 10px;
-}
-
 /* заголовки мягче и дороже */
 .timer h2,
 .place h2,
