@@ -14,7 +14,7 @@
       <img src="assets/cover.jpg" alt="Вероника и Даниил">
     </section>
 
-    <section class="timer">
+    <section class="timer reveal">
       <h2>До свадьбы осталось</h2>
 
       <div class="timer-grid">
@@ -25,13 +25,13 @@
       </div>
     </section>
 
-    <section class="text">
+    <section class="text reveal">
       <h2>Гости!</h2>
       <p>Мы рады сообщить Вам, что <b>12.06.2026</b> состоится самое главное торжество в нашей жизни — день нашей свадьбы.</p>
       <p>Приглашаем Вас разделить с нами радость этого незабываемого дня.</p>
     </section>
 
-   <section class="place">
+   <section class="place reveal">
   <div class="place-card">
     <h2>Место проведения</h2>
 
@@ -42,7 +42,7 @@
 
 </section>
 
-    <section class="schedule">
+    <section class="schedule reveal">
       <h2>Свадебное<br>расписание</h2>
 
       <div class="schedule-row"><span>16:00</span><p>Сбор гостей<br><small>фуршет</small></p></div>
@@ -52,7 +52,7 @@
       <div class="schedule-row"><span>23:00</span><p>Последний бокал</p></div>
     </section>
     
-<section class="extras">
+<section class="extras reveal">
   <div class="extra-card dress">
     <h2>Дресс код</h2>
 
@@ -75,7 +75,7 @@
   </div>
 
 </section>
-    <section class="confirm">
+    <section class="confirm reveal">
       <h2>Подтверждение</h2>
       <p>Пожалуйста, подтвердите своё присутствие до<br><b>11.05.2026</b></p>
 
@@ -162,6 +162,21 @@ const revealObserver = new IntersectionObserver((entries) => {
 });
 
 revealItems.forEach(item => revealObserver.observe(item));
+</script>
+  <script>
+const revealItems = document.querySelectorAll('.reveal');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, {
+  threshold: 0.15
+});
+
+revealItems.forEach(item => observer.observe(item));
 </script>
 </body>
 </html>
