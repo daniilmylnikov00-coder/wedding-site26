@@ -370,7 +370,7 @@ section {
   content: "";
   position: absolute;
   top: 50%;
-  right: -35px;
+  right: -80px;
   transform: translateY(-50%);
 
   width: 150px;
