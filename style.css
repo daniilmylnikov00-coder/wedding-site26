@@ -316,3 +316,64 @@ border-radius: 14px;
     font-size: 24px;
   }
 }
+/* ===== PLACE FIX ===== */
+
+.place {
+  position: relative;
+  padding: 90px 20px 110px;
+  text-align: center;
+}
+
+/* СТЕКЛО — возвращаем нормальный */
+.place-card {
+  background: rgba(255,255,255,0.6);
+  border-radius: 28px;
+  padding: 40px 20px 45px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+}
+
+/* ТЕКСТ */
+.place-card h2 {
+  margin: 0 0 20px;
+  font-size: 28px;
+  letter-spacing: 3px;
+  color: #6f7f5d;
+}
+
+.place-card p {
+  font-size: 20px;
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+/* КНОПКА */
+.place-card button {
+  background: #6f7f5d;
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 24px;
+  font-size: 18px;
+}
+
+/* ===== ЦВЕТЫ ===== */
+
+/* верх */
+.decor-top {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 220px;
+}
+
+/* низ */
+.decor-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: 220px;
+}
