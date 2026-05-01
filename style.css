@@ -348,3 +348,26 @@ section {
 .schedule-row p {
   color: #222;
 }
+/* ЛИМОНЫ СПРАВА */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 220px; /* регулируй размер */
+  height: 100%;
+
+  background-image: url("assets/lemons.png");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: contain;
+
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ЧТОБЫ КОНТЕНТ БЫЛ ПОВЕРХ */
+.page {
+  position: relative;
+  z-index: 1;
+}
