@@ -348,40 +348,39 @@ section {
   overflow: hidden;
 }
 
-/* ЧИСТЫЙ БЛОК РАСПИСАНИЯ С ЛИМОНАМИ */
+/* РАСПИСАНИЕ + ЛИМОНЫ СПРАВА */
 
 .schedule {
   position: relative !important;
   overflow: hidden !important;
-  background: transparent !important;
 }
 
+/* стекло */
 .schedule::before {
   content: "";
   position: absolute;
-  top: 28px;
-  right: 0;
-  bottom: 28px;
-  width: 42%;
-
-  background: url("./assets/lemons.png") no-repeat right center / cover;
-  opacity: 0.32;
-
-  z-index: 0;
-  pointer-events: none;
-}
-
-.schedule::after {
-  content: "";
-  position: absolute;
   inset: 28px 18px;
-
-  background: rgba(255,255,255,0.52);
+  background: rgba(255,255,255,0.62);
   border: 1px solid rgba(255,255,255,0.55);
   border-radius: 30px;
   box-shadow: 0 18px 45px rgba(0,0,0,0.06);
   backdrop-filter: blur(7px);
   -webkit-backdrop-filter: blur(7px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* лимоны поверх стекла */
+.schedule::after {
+  content: "";
+  position: absolute;
+  top: 28px;
+  right: -18px;
+  bottom: 28px;
+  width: 34%;
+
+  background: url("./assets/lemons.png") no-repeat right center / cover;
+  opacity: 0.42;
 
   z-index: 1;
   pointer-events: none;
