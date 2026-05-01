@@ -369,18 +369,22 @@ section {
 .schedule::after {
   content: "";
   position: absolute;
-  top: 50%;
-  right: -80px;
-  transform: translateY(-50%);
 
-  width: 150px;
-  height: 300px;
+  top: 0;
+  bottom: 0;        /* ← растягивает на всю высоту */
+  right: -60px;     /* ← регулируешь вылет */
+
+  width: 160px;     /* ширина лимонов */
 
   background-image: url("./assets/lemons.png");
   background-repeat: no-repeat;
   background-position: right center;
-  background-size: contain;
+  background-size: cover; /* ← ВАЖНО: чтобы растянулись */
 
   pointer-events: none;
   z-index: 1;
+}
+.schedule {
+  position: relative;
+  overflow: visible;
 }
