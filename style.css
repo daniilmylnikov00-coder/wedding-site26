@@ -371,3 +371,24 @@ body::after {
   position: relative;
   z-index: 1;
 }
+/* ЛИМОНЫ СПРАВА */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 100%;
+
+  background: url("./assets/lemons.png") no-repeat right center;
+  background-size: contain;
+
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* КОНТЕНТ ПОВЕРХ */
+body > * {
+  position: relative;
+  z-index: 1;
+}
