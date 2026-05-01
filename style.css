@@ -362,29 +362,21 @@ section {
   z-index: 2;
 }
 
-/* =========================
-   ЛИМОНЫ СПРАВА (основные)
-   ========================= */
-
 .schedule::after {
   content: "";
   position: absolute;
 
-  top: 0;
-  bottom: 0;        /* ← растягивает на всю высоту */
-  right: -60px;     /* ← регулируешь вылет */
+  top: 28px;
+  bottom: 28px;
+  right: -42px;
 
-  width: 160px;     /* ширина лимонов */
+  width: 135px;
 
   background-image: url("./assets/lemons.png");
   background-repeat: no-repeat;
   background-position: right center;
-  background-size: cover; /* ← ВАЖНО: чтобы растянулись */
+  background-size: cover;
 
   pointer-events: none;
   z-index: 1;
-}
-.schedule {
-  position: relative;
-  overflow: visible;
 }
