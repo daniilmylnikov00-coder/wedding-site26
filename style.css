@@ -302,64 +302,117 @@ section {
 #rsvp-form button:active {
   transform: scale(0.98);
 }
-/* СТЕКЛЯННЫЙ БЛОК "МЕСТО ПРОВЕДЕНИЯ" С ДЕКОРОМ */
+/* БЛОК МЕСТО ПРОВЕДЕНИЯ С ЦВЕТАМИ */
 
 .place {
   position: relative;
-  overflow: hidden;
-  padding: 150px 28px !important;
-}
+  margin: 90px auto 100px;
+  padding: 115px 28px 125px !important;
+  width: calc(100% - 36px);
+  max-width: 394px;
 
-/* стекло */
-.place::before {
-  content: "";
-  position: absolute;
-  inset: 42px 18px;
-  background: rgba(255,255,255,0.42);
-  border: 1px solid rgba(111,127,93,0.18);
+  background: rgba(255, 255, 255, 0.38) !important;
+  border: 1px solid rgba(111, 127, 93, 0.18);
   border-radius: 30px;
-  box-shadow: 0 18px 42px rgba(0,0,0,0.05);
-  z-index: 0;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.05);
+
+  overflow: visible;
+  text-align: center;
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
-/* верхняя часть декора */
-.place::after {
-  content: "";
-  position: absolute;
-  top: 46px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 78%;
-  height: 110px;
-  background-image: url("assets/place-frame.png");
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  background-position: center top;
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* нижняя часть декора отдельным слоем */
-.place .place-decor-bottom {
-  position: absolute;
-  bottom: 46px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 78%;
-  height: 110px;
-  background-image: url("assets/place-frame.png");
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  background-position: center bottom;
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* контент поверх стекла и декора */
-.place > h2,
-.place > p,
-.place > button,
-.place > a {
+.place h2 {
   position: relative;
-  z-index: 2;
+  z-index: 4;
+  margin: 0 0 28px;
+  font-size: 32px;
+  line-height: 1.25;
+  font-weight: 500;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #6f7f5d;
+}
+
+.place p {
+  position: relative;
+  z-index: 4;
+  max-width: 340px;
+  margin: 0 auto 28px;
+  font-size: 21px;
+  line-height: 1.5;
+  color: #222;
+}
+
+.place button {
+  position: relative;
+  z-index: 4;
+  border: none;
+  background: #6f7f5d;
+  color: white;
+  padding: 15px 38px;
+  border-radius: 22px;
+  font-size: 21px;
+  font-family: inherit;
+  box-shadow: 0 10px 24px rgba(111, 127, 93, 0.24);
+}
+
+.decor {
+  position: absolute;
+  left: 50%;
+  width: 250px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.decor-top {
+  top: -58px;
+  transform: translateX(-50%);
+}
+
+.decor-bottom {
+  bottom: -58px;
+  transform: translateX(-50%) rotate(180deg);
+}
+
+/* ПЛАВНОЕ ПОЯВЛЕНИЕ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ЛЁГКОЕ ДВИЖЕНИЕ ЦВЕТОВ */
+
+.decor-top {
+  animation: floatTop 4s ease-in-out infinite;
+}
+
+.decor-bottom {
+  animation: floatBottom 4s ease-in-out infinite;
+}
+
+@keyframes floatTop {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-6px);
+  }
+}
+
+@keyframes floatBottom {
+  0%, 100% {
+    transform: translateX(-50%) rotate(180deg) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) rotate(180deg) translateY(-6px);
+  }
 }
