@@ -348,3 +348,56 @@ section {
 .schedule-row p {
   color: #222;
 }
+/* =========================
+   ДОП БЛОКИ (ДРЕСС-КОД / ПОДАРКИ)
+   ========================= */
+
+.extras {
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  background: url("./assets/paper.jpg") center top / cover repeat-y;
+}
+
+.extra-card {
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto;
+
+  padding: 35px 25px;
+  text-align: center;
+
+  background: rgba(255,255,255,0.55);
+  border-radius: 28px;
+  border: 1px solid rgba(255,255,255,0.5);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,0.06),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+.extra-card h2 {
+  margin: 0 0 20px;
+
+  font-size: 28px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+
+  color: #6f7f5d;
+}
+
+.extra-card p {
+  margin: 0 0 15px;
+
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.extra-card b {
+  font-weight: 600;
+}
