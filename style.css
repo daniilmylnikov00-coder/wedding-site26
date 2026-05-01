@@ -351,31 +351,52 @@ section {
 /* =========================
    СВАДЕБНОЕ РАСПИСАНИЕ
    ========================= */
+/* РАСПИСАНИЕ: гармоничный фон с лимонами */
 
 .schedule {
   position: relative;
-  overflow: visible;
+  overflow: hidden;
+  background: transparent !important;
 }
 
-.schedule > * {
-  position: relative;
-  z-index: 2;
-}
+/* лимоны отдельным слоем */
+.schedule::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: -10px;
+  bottom: 20px;
+  width: 42%;
 
-.schedule {
-  position: relative;
-
-  /* стекло */
-  background: rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-
-  border-radius: 28px;
-  padding: 40px 20px;
-
-  /* фон с лимонами */
   background-image: url("./assets/lemons.png");
   background-repeat: no-repeat;
   background-position: right center;
-  background-size: contain;
+  background-size: cover;
+
+  opacity: 0.55;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* стекло поверх лимонов */
+.schedule::after {
+  content: "";
+  position: absolute;
+  inset: 28px 18px;
+
+  background: rgba(255,255,255,0.48);
+  border: 1px solid rgba(255,255,255,0.55);
+  border-radius: 30px;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.06);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* текст и строки поверх стекла */
+.schedule > * {
+  position: relative;
+  z-index: 2;
 }
