@@ -63,9 +63,20 @@ button {
    РАСПИСАНИЕ (БАЗА)
    ========================= */
 
+/* =========================
+   РАСПИСАНИЕ БЕЗ СТЕКЛА
+   ========================= */
+
 .schedule {
   position: relative;
   overflow: hidden;
+
+  background: transparent; /* убрали стекло */
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+
+  border: none;
+  box-shadow: none;
 }
 
 /* строки */
@@ -98,20 +109,6 @@ button {
    ========================= */
 
 /* стекло отдельным слоем */
-.schedule::before {
-  content: "";
-  position: absolute;
-  inset: 15px;
-
-  background: rgba(255,255,255,0.55);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-
-  border-radius: 28px;
-  border: 1px solid rgba(255,255,255,0.6);
-
-  z-index: 0;
-}
 
 /* лимоны справа */
 .schedule::after {
