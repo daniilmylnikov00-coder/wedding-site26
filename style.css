@@ -362,21 +362,20 @@ section {
   z-index: 2;
 }
 
-.schedule::after {
-  content: "";
-  position: absolute;
+.schedule {
+  position: relative;
 
-  top: 28px;
-  bottom: 28px;
-  right: -42px;
+  /* стекло */
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 
-  width: 135px;
+  border-radius: 28px;
+  padding: 40px 20px;
 
+  /* фон с лимонами */
   background-image: url("./assets/lemons.png");
   background-repeat: no-repeat;
   background-position: right center;
-  background-size: cover;
-
-  pointer-events: none;
-  z-index: 1;
+  background-size: contain;
 }
