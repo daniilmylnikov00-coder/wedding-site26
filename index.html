@@ -31,12 +31,17 @@
       <p>Приглашаем Вас разделить с нами радость этого незабываемого дня.</p>
     </section>
 
-    <section class="place">
-      <h2>Место проведения</h2>
-      <p>Краснодар, микрорайон Завод Измерительных Приборов,<br>Зиповская улица, 5/7 "Villa Italy"</p>
+    <section class="place reveal">
+  <img src="assets/place-frame.png" class="decor decor-top" alt="">
+  <img src="assets/place-frame.png" class="decor decor-bottom" alt="">
+
+  <h2>Место проведения</h2>
+
+  <p>Краснодар, микрорайон Завод Измерительных Приборов,<br>Зиповская улица, 5/7 "Villa Italy"</p>
       <button onclick="window.open('https://yandex.ru/maps/?text=Краснодар,+Зиповская+улица,+5/7', '_blank')">
     Открыть карту
-</button>
+  </button>
+</section>
 
       <div class="place-decor-bottom"></div>
     </section>
@@ -124,6 +129,20 @@ document.getElementById('rsvp-form').addEventListener('submit', async function(e
   }
 });
 </script>
+<script>
+const revealItems = document.querySelectorAll('.reveal');
 
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+revealItems.forEach(item => revealObserver.observe(item));
+</script>
 </body>
 </html>
