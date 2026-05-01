@@ -4,8 +4,7 @@
   box-sizing: border-box;
 }
 
-html,
-body {
+html, body {
   margin: 0;
   padding: 0;
   background: #e8e4dc;
@@ -14,7 +13,6 @@ body {
 }
 
 .page {
-  width: 100%;
   max-width: 430px;
   margin: 0 auto;
   overflow: hidden;
@@ -26,7 +24,6 @@ section {
 }
 
 /* ОБЛОЖКА */
-
 .cover {
   padding: 0;
 }
@@ -36,27 +33,57 @@ section {
   display: block;
 }
 
-/* ОБЩИЙ ФОН БЛОКОВ */
-
+/* ОБЩИЙ ФОН */
 .timer,
 .text,
-.place-wrap,
+.place,
 .schedule,
 .confirm {
   background: url("assets/paper.jpg") center top / cover repeat-y;
 }
 
-/* ТАЙМЕР */
+/* СТЕКЛО */
+.glass,
+.timer,
+.place,
+.schedule,
+.confirm {
+  position: relative;
+}
 
+.timer::before,
+.place::before,
+.schedule::before,
+.confirm::before {
+  content: "";
+  position: absolute;
+  inset: 28px 18px;
+  background: rgba(255,255,255,0.42);
+  border: 1px solid rgba(111,127,93,0.18);
+  border-radius: 30px;
+  box-shadow: 0 18px 42px rgba(0,0,0,0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 0;
+}
+
+.timer > *,
+.place > *,
+.schedule > *,
+.confirm > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ТАЙМЕР */
 .timer {
-  padding: 55px 22px 65px;
+  padding: 70px 22px;
   text-align: center;
 }
 
 .timer h2 {
-  margin: 0 0 30px;
+  margin: 0 0 28px;
   font-size: 30px;
-  line-height: 1.25;
   font-weight: 500;
   letter-spacing: 3px;
   color: #6f7f5d;
@@ -65,20 +92,18 @@ section {
 .timer-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+  gap: 10px;
 }
 
 .timer-grid div {
   background: rgba(255,255,255,0.82);
   border-radius: 18px;
-  padding: 18px 6px;
-  box-shadow: 0 10px 26px rgba(0,0,0,0.06);
+  padding: 17px 6px;
 }
 
 .timer-grid span {
   display: block;
-  font-size: 28px;
-  line-height: 1;
+  font-size: 27px;
 }
 
 .timer-grid p {
@@ -87,52 +112,38 @@ section {
 }
 
 /* ГОСТИ */
-
 .text {
   padding: 65px 28px;
   text-align: center;
 }
 
 .text h2 {
-  margin: 0 0 26px;
-  font-size: 36px;
-  line-height: 1.2;
+  margin: 0 0 24px;
+  font-size: 34px;
   font-style: italic;
   font-weight: 500;
 }
 
 .text p {
   max-width: 340px;
-  margin: 0 auto 18px;
+  margin: 0 auto 16px;
   font-size: 21px;
   line-height: 1.55;
 }
 
 /* МЕСТО */
-
 .place {
-  position: relative;
+  margin: 85px auto 110px;
+  padding: 115px 28px 120px;
   width: calc(100% - 36px);
   max-width: 394px;
-  margin: 85px auto 110px;
-  padding: 105px 26px 115px;
   text-align: center;
-
-  background: rgba(255,255,255,0.42);
-  border: 1px solid rgba(111,127,93,0.18);
-  border-radius: 30px;
-  box-shadow: 0 18px 42px rgba(0,0,0,0.05);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   overflow: visible;
 }
 
 .place h2 {
-  position: relative;
-  z-index: 3;
   margin: 0 0 28px;
   font-size: 31px;
-  line-height: 1.25;
   font-weight: 500;
   letter-spacing: 5px;
   text-transform: uppercase;
@@ -140,8 +151,6 @@ section {
 }
 
 .place p {
-  position: relative;
-  z-index: 3;
   max-width: 340px;
   margin: 0 auto 28px;
   font-size: 21px;
@@ -149,8 +158,6 @@ section {
 }
 
 .place button {
-  position: relative;
-  z-index: 3;
   border: none;
   background: #6f7f5d;
   color: white;
@@ -161,39 +168,37 @@ section {
   box-shadow: 0 10px 26px rgba(111,127,93,0.25);
 }
 
+/* ЦВЕТЫ */
 .decor {
-  position: absolute;
-  left: 50%;
-  width: 230px;
+  position: absolute !important;
+  left: 50% !important;
+  width: 240px !important;
   pointer-events: none;
-  z-index: 2;
+  z-index: 3 !important;
 }
 
 .decor-top {
-  top: -56px;
+  top: -55px !important;
   transform: translateX(-50%);
 }
 
 .decor-bottom {
-  bottom: -56px;
+  bottom: -55px !important;
   transform: translateX(-50%);
 }
 
 /* РАСПИСАНИЕ */
-
 .schedule {
-  padding: 80px 28px 90px;
+  padding: 85px 28px 95px;
   text-align: center;
 }
 
 .schedule h2 {
-  margin: 0 0 48px;
+  margin: 0 0 46px;
   font-size: 34px;
-  line-height: 1.35;
   font-weight: 500;
   letter-spacing: 6px;
   text-transform: uppercase;
-  color: #222;
 }
 
 .schedule-row,
@@ -219,7 +224,6 @@ section {
 .item p {
   margin: 0;
   font-size: 25px;
-  line-height: 1.25;
 }
 
 .schedule-row small,
@@ -230,16 +234,14 @@ section {
 }
 
 /* ПОДТВЕРЖДЕНИЕ */
-
 .confirm {
-  padding: 75px 24px 95px;
+  padding: 80px 24px 100px;
   text-align: center;
 }
 
 .confirm h2 {
   margin: 0 0 28px;
   font-size: 32px;
-  line-height: 1.25;
   font-weight: 500;
   letter-spacing: 5px;
   text-transform: uppercase;
@@ -266,11 +268,10 @@ section {
   width: 100%;
   padding: 16px 18px;
   border: none;
-  border-radius: 14px;
-background: rgba(255,255,255,0.94);
+border-radius: 14px;
+  background: rgba(255,255,255,0.94);
   font-size: 18px;
   font-family: Arial, sans-serif;
-  color: #222;
 }
 
 #rsvp-form button {
@@ -282,11 +283,9 @@ background: rgba(255,255,255,0.94);
   color: white;
   font-size: 22px;
   font-family: Arial, sans-serif;
-  box-shadow: 0 10px 26px rgba(111,127,93,0.25);
 }
 
 /* АНИМАЦИЯ */
-
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -298,43 +297,8 @@ background: rgba(255,255,255,0.94);
   transform: translateY(0);
 }
 
-.decor-top {
-  animation: floatTop 4s ease-in-out infinite;
-}
-
-.decor-bottom {
-  animation: floatBottom 4s ease-in-out infinite;
-}
-
-@keyframes floatTop {
-  0%, 100% {
-    transform: translateX(-50%) translateY(0);
-  }
-  50% {
-    transform: translateX(-50%) translateY(-6px);
-  }
-}
-
-@keyframes floatBottom {
-  0%, 100% {
-    transform: translateX(-50%) translateY(0);
-  }
-  50% {
-    transform: translateX(-50%) translateY(6px);
-  }
-}
-
 /* МОБИЛКА */
-
 @media (max-width: 430px) {
-  .timer-grid {
-    gap: 10px;
-  }
-
-  .timer-grid span {
-    font-size: 25px;
-  }
-
   .text p,
   .place p {
     font-size: 20px;
